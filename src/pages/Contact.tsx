@@ -8,8 +8,8 @@ const Contact: React.FC = () => {
 
     return (
         <div className="min-h-screen pt-20 pb-16 relative">
-            <div className="absolute inset-0 bg-secondary-50 -z-10">
-                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-50/50 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 -z-10">
+                <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-green-50/50 to-transparent"></div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,16 +37,18 @@ const Contact: React.FC = () => {
                             <h3 className="text-2xl font-bold text-secondary-900 mb-6">Contact Information</h3>
                             <div className="space-y-6">
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-primary-100 rounded-xl text-primary-600">
+                                    <div className="p-3 bg-green-100 rounded-xl text-green-600">
                                         <Mail className="h-6 w-6" />
                                     </div>
                                     <div>
                                         <p className="font-medium text-secondary-900">Email</p>
-                                        <p className="text-secondary-600">math_cs@htxy.edu.cn</p>
+                                        <a href="mailto:1958126580@qq.com" className="text-secondary-600 hover:text-green-600 transition-colors">
+                                            1958126580@qq.com
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-primary-100 rounded-xl text-primary-600">
+                                    <div className="p-3 bg-green-100 rounded-xl text-green-600">
                                         <MapPin className="h-6 w-6" />
                                     </div>
                                     <div>
@@ -55,12 +57,14 @@ const Contact: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
-                                    <div className="p-3 bg-primary-100 rounded-xl text-primary-600">
+                                    <div className="p-3 bg-green-100 rounded-xl text-green-600">
                                         <Phone className="h-6 w-6" />
                                     </div>
                                     <div>
                                         <p className="font-medium text-secondary-900">Phone</p>
-                                        <p className="text-secondary-600">+86 478 1234567</p>
+                                        <a href="tel:+8604787950090" className="text-secondary-600 hover:text-green-600 transition-colors">
+                                            (+86) 0478 7950090
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -84,7 +88,7 @@ const Contact: React.FC = () => {
                                     id="name"
                                     name="name"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -96,7 +100,7 @@ const Contact: React.FC = () => {
                                     id="email"
                                     name="email"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -108,7 +112,7 @@ const Contact: React.FC = () => {
                                     id="subject"
                                     name="subject"
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all"
                                 />
                             </div>
                             <div>
@@ -120,12 +124,12 @@ const Contact: React.FC = () => {
                                     name="message"
                                     rows={4}
                                     required
-                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-200 outline-none transition-all resize-none"
+                                    className="w-full px-4 py-3 rounded-lg bg-white/50 border border-secondary-200 focus:border-green-500 focus:ring-2 focus:ring-green-200 outline-none transition-all resize-none"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                className="w-full py-3 px-6 rounded-lg bg-primary-600 text-white font-medium hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 transition-all flex items-center justify-center gap-2"
+                                className="w-full py-3 px-6 rounded-lg bg-gradient-to-r from-green-600 to-green-700 text-white font-medium hover:from-green-700 hover:to-green-800 focus:ring-4 focus:ring-green-200 transition-all flex items-center justify-center gap-2"
                             >
                                 <Send className="h-5 w-5" />
                                 {t('contact.send')}
