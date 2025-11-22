@@ -9,27 +9,35 @@ const News: React.FC = () => {
     const newsItems = [
         {
             id: 1,
-            title: "EcoBase v2.0 Released",
-            date: "2024-03-15",
-            category: "Software",
-            summary: "Major update including new spatial analysis algorithms and improved performance for large datasets.",
-            image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+            title: "Student Team Wins Prize in Cross-Strait Youth Science Forum",
+            date: "2024-07-04",
+            category: "Awards",
+            summary: "A team of students from our department received the Outstanding Paper Award at the inaugural Cross-Strait Youth Science and Technology Forum.",
+            image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop"
         },
         {
             id: 2,
-            title: "International Ecology Conference 2024",
-            date: "2024-02-28",
-            category: "Event",
-            summary: "Our team will be presenting our latest findings on spatiotemporal modeling at the upcoming conference in Geneva.",
-            image: "https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=2070&auto=format&fit=crop"
+            title: "Academic Lecture: Beidou Positioning Technology",
+            date: "2024-05-09",
+            category: "Lecture",
+            summary: "Professor invited to give a special lecture on the principles and applications of the Beidou Navigation Satellite System.",
+            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
         },
         {
             id: 3,
-            title: "New Research Paper Published",
-            date: "2024-01-10",
-            category: "Research",
-            summary: "Our latest paper 'Advanced Methods in Computational Ecology' has been published in the Journal of Ecological Informatics.",
-            image: "https://images.unsplash.com/photo-1456940553166-db0803b78a5f?q=80&w=2076&auto=format&fit=crop"
+            title: "School-Enterprise Cooperation with BOE Technology",
+            date: "2024-04-05",
+            category: "Cooperation",
+            summary: "Department leaders visited BOE Technology Group to discuss internship opportunities and joint talent cultivation programs.",
+            image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop"
+        },
+        {
+            id: 4,
+            title: "Success in National Undergraduate Mathematical Modeling Contest",
+            date: "2023-12-13",
+            category: "Competition",
+            summary: "Our students achieved excellent results in the 2023 competition, winning multiple national and regional awards.",
+            image: "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?q=80&w=2070&auto=format&fit=crop"
         }
     ];
 
@@ -53,7 +61,7 @@ const News: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                     {newsItems.map((item, index) => (
                         <motion.div
                             key={item.id}
@@ -63,7 +71,7 @@ const News: React.FC = () => {
                             transition={{ delay: index * 0.2, duration: 0.5 }}
                             className="glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
                         >
-                            <div className="h-48 overflow-hidden relative">
+                            <div className="h-64 overflow-hidden relative">
                                 <img
                                     src={item.image}
                                     alt={item.title}
@@ -76,22 +84,22 @@ const News: React.FC = () => {
                                 </div>
                             </div>
 
-                            <div className="p-6 flex flex-col flex-grow">
-                                <div className="flex items-center text-secondary-500 text-sm mb-3">
+                            <div className="p-8 flex flex-col flex-grow">
+                                <div className="flex items-center text-secondary-500 text-sm mb-4">
                                     <Calendar className="h-4 w-4 mr-2" />
                                     {item.date}
                                 </div>
 
-                                <h3 className="text-xl font-bold text-secondary-900 mb-3 line-clamp-2">
+                                <h3 className="text-2xl font-bold text-secondary-900 mb-4 line-clamp-2">
                                     {item.title}
                                 </h3>
 
-                                <p className="text-secondary-600 mb-6 line-clamp-3 flex-grow">
+                                <p className="text-secondary-600 mb-6 line-clamp-3 flex-grow text-lg">
                                     {item.summary}
                                 </p>
 
                                 <button className="text-primary-600 font-medium inline-flex items-center hover:text-primary-700 transition-colors mt-auto group">
-                                    Read More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                                    Read Full Story <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                                 </button>
                             </div>
                         </motion.div>

@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-medium text-secondary-900">Email</p>
-                                        <p className="text-secondary-600">contact@ecobase.org</p>
+                                        <p className="text-secondary-600">math_cs@htxy.edu.cn</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-medium text-secondary-900">Location</p>
-                                        <p className="text-secondary-600">Beijing, China</p>
+                                        <p className="text-secondary-600">Bayannur City, Inner Mongolia, China</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -60,7 +60,7 @@ const Contact: React.FC = () => {
                                     </div>
                                     <div>
                                         <p className="font-medium text-secondary-900">Phone</p>
-                                        <p className="text-secondary-600">+86 10 1234 5678</p>
+                                        <p className="text-secondary-600">+86 478 1234567</p>
                                     </div>
                                 </div>
                             </div>

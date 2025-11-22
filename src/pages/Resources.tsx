@@ -1,65 +1,59 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Download, Github, Code2, Database, Box, Layers, Map, BarChart } from 'lucide-react';
+import { Download, ExternalLink, Book, Code, Database, Monitor, FileText, Video } from 'lucide-react';
 
 const Resources: React.FC = () => {
     const { t } = useTranslation();
 
     const resources = [
         {
-            title: "EcoBase Data Loader",
-            description: "High-performance Python library for efficiently loading and preprocessing massive spatiotemporal ecological datasets. Supports GeoTIFF, NetCDF, and HDF5 formats.",
-            type: "Software",
-            icon: <Box className="h-6 w-6 text-blue-600" />,
+            title: "Mathematical Modeling Training",
+            description: "Comprehensive training materials for the National Undergraduate Mathematical Modeling Contest, including past papers and solution guides.",
+            type: "Training",
+            icon: <Book className="h-6 w-6 text-blue-600" />,
             color: "bg-blue-100 text-blue-700",
-            link: "#",
-            github: "#"
+            link: "#"
         },
         {
-            title: "SpatialStats Py",
-            description: "A comprehensive toolkit for spatial statistics, including point pattern analysis, spatial autocorrelation (Moran's I, Geary's C), and kriging interpolation.",
-            type: "Code",
-            icon: <BarChart className="h-6 w-6 text-green-600" />,
+            title: "IoT Laboratory Access",
+            description: "Schedule and guidelines for accessing the Internet of Things Engineering Laboratory for student projects and research.",
+            type: "Facility",
+            icon: <Monitor className="h-6 w-6 text-green-600" />,
             color: "bg-green-100 text-green-700",
-            link: "#",
-            github: "#"
+            link: "#"
         },
         {
-            title: "Global Canopy Height 2024",
-            description: "30m resolution global forest canopy height map derived from GEDI lidar data and Sentinel-2 imagery. Optimized for carbon stock estimation.",
-            type: "Data",
-            icon: <Map className="h-6 w-6 text-purple-600" />,
-            color: "bg-purple-100 text-purple-700",
-            link: "#",
-            github: "#"
-        },
-        {
-            title: "Species Distribution Modeler",
-            description: "An R package implementing advanced machine learning algorithms (MaxEnt, Random Forest, BRT) for predicting species distributions under climate change scenarios.",
-            type: "Software",
-            icon: <Layers className="h-6 w-6 text-blue-600" />,
-            color: "bg-blue-100 text-blue-700",
-            link: "#",
-            github: "#"
-        },
-        {
-            title: "Temporal Dynamics Simulator",
-            description: "Agent-based modeling framework for simulating population dynamics and species interactions over time. Built with C++ for maximum speed.",
-            type: "Code",
-            icon: <Code2 className="h-6 w-6 text-green-600" />,
-            color: "bg-green-100 text-green-700",
-            link: "#",
-            github: "#"
-        },
-        {
-            title: "Climate Projections Dataset",
-            description: "Downscaled CMIP6 climate projections (temperature, precipitation, bioclimatic variables) for 2021-2100 under SSP scenarios.",
+            title: "Data Analysis Datasets",
+            description: "Curated datasets for teaching and research in statistics and big data analysis, including local economic and ecological data.",
             type: "Data",
             icon: <Database className="h-6 w-6 text-purple-600" />,
             color: "bg-purple-100 text-purple-700",
-            link: "#",
-            github: "#"
+            link: "#"
+        },
+        {
+            title: "Python for Data Science",
+            description: "Lecture notes and code examples for the 'Python Data Analysis' course, covering Pandas, NumPy, and Matplotlib.",
+            type: "Courseware",
+            icon: <Code className="h-6 w-6 text-yellow-600" />,
+            color: "bg-yellow-100 text-yellow-700",
+            link: "#"
+        },
+        {
+            title: "Research Paper Template",
+            description: "Standard LaTeX and Word templates for undergraduate thesis and academic paper submissions.",
+            type: "Template",
+            icon: <FileText className="h-6 w-6 text-red-600" />,
+            color: "bg-red-100 text-red-700",
+            link: "#"
+        },
+        {
+            title: "Academic Lectures Archive",
+            description: "Video recordings of past academic lectures, including the recent 'Beidou Positioning Technology' seminar.",
+            type: "Video",
+            icon: <Video className="h-6 w-6 text-indigo-600" />,
+            color: "bg-indigo-100 text-indigo-700",
+            link: "#"
         }
     ];
 
@@ -79,7 +73,7 @@ const Resources: React.FC = () => {
                 >
                     <h1 className="text-4xl font-bold text-secondary-900 mb-4">{t('nav.resources')}</h1>
                     <p className="text-xl text-secondary-600 max-w-3xl">
-                        Access our latest software, code repositories, and datasets designed for ecological research.
+                        Access teaching materials, research tools, and laboratory resources for students and faculty.
                     </p>
                 </motion.div>
 
@@ -109,18 +103,12 @@ const Resources: React.FC = () => {
                                 {resource.description}
                             </p>
 
-                            <div className="flex gap-3 mt-auto pt-6 border-t border-secondary-100">
+                            <div className="mt-auto pt-6 border-t border-secondary-100">
                                 <a
                                     href={resource.link}
-                                    className="flex-1 flex items-center justify-center px-4 py-2 rounded-lg bg-primary-50 text-primary-700 font-medium hover:bg-primary-100 transition-colors"
+                                    className="flex items-center justify-center w-full px-4 py-2 rounded-lg bg-primary-50 text-primary-700 font-medium hover:bg-primary-100 transition-colors"
                                 >
-                                    <Download className="h-4 w-4 mr-2" /> Download
-                                </a>
-                                <a
-                                    href={resource.github}
-                                    className="flex-1 flex items-center justify-center px-4 py-2 rounded-lg bg-secondary-100 text-secondary-700 font-medium hover:bg-secondary-200 transition-colors"
-                                >
-                                    <Github className="h-4 w-4 mr-2" /> GitHub
+                                    <Download className="h-4 w-4 mr-2" /> Access Resource
                                 </a>
                             </div>
                         </motion.div>

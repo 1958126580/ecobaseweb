@@ -2,24 +2,24 @@
     "nav": {
         "home": "Home",
         "about": "About",
-        "resources": "Resources & Software",
+        "resources": "Resources",
         "discussion": "Discussion",
         "news": "News",
         "contact": "Contact"
     },
     "hero": {
-        "title": "Spatiotemporal Digital Base",
-        "subtitle": "Empowering Ecological Research with Mathematics & Computing",
-        "cta": "Explore Resources"
+        "title": "Department of Mathematics and Computer Science",
+        "subtitle": "Hetao College | Empowering the Future with Mathematics & Technology",
+        "cta": "Explore Programs"
     },
     "about": {
-        "team": "Our Team",
+        "team": "Faculty Team",
         "mission": "Our Mission",
         "vision": "Our Vision"
     },
     "contact": {
-        "title": "Get in Touch",
-        "subtitle": "Have questions or want to collaborate? Send us a message.",
+        "title": "Contact Us",
+        "subtitle": "Get in touch with the Department of Mathematics and Computer Science.",
         "name": "Name",
         "email": "Email",
         "subject": "Subject",
@@ -27,10 +27,10 @@
         "send": "Send Message"
     },
     "news": {
-        "title": "Latest Updates",
-        "subtitle": "Stay informed about our latest research, software releases, and events."
+        "title": "Department News",
+        "subtitle": "Latest updates on research, teaching, and student activities."
     },
     "footer": {
-        "copyright": "© 2024 Spatiotemporal Digital Base. All rights reserved."
+        "copyright": "© 2025 Hetao College Department of Mathematics and Computer Science. All rights reserved."
     }
 }

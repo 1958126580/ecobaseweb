@@ -2,24 +2,24 @@
     "nav": {
         "home": "首页",
         "about": "关于我们",
-        "resources": "资源与软件",
+        "resources": "教学资源",
         "discussion": "讨论区",
         "news": "新闻动态",
         "contact": "联系我们"
     },
     "hero": {
-        "title": "时空数字底座",
-        "subtitle": "用数学与计算机技术赋能生态学研究",
-        "cta": "探索资源"
+        "title": "数学与计算机系",
+        "subtitle": "河套学院 | 以数学与科技赋能未来",
+        "cta": "探索专业"
     },
     "about": {
-        "team": "我们的团队",
-        "mission": "我们的使命",
-        "vision": "我们的愿景"
+        "team": "师资队伍",
+        "mission": "办学使命",
+        "vision": "发展愿景"
     },
     "contact": {
         "title": "联系我们",
-        "subtitle": "有疑问或希望合作？请给我们留言。",
+        "subtitle": "与河套学院数学与计算机系取得联系。",
         "name": "姓名",
         "email": "电子邮箱",
         "subject": "主题",
@@ -27,10 +27,10 @@
         "send": "发送留言"
     },
     "news": {
-        "title": "最新动态",
-        "subtitle": "了解我们最新的研究进展、软件发布和活动资讯。"
+        "title": "系部新闻",
+        "subtitle": "了解最新的教学科研动态与学生活动。"
     },
     "footer": {
-        "copyright": "© 2024 时空数字底座. 版权所有."
+        "copyright": "© 2025 河套学院数学与计算机系. 版权所有."
     }
 }

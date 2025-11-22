@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Users, Target, Lightbulb, Github, Twitter, Linkedin } from 'lucide-react';
+import { Users, Target, Lightbulb, BookOpen, Award, GraduationCap } from 'lucide-react';
 
 const About: React.FC = () => {
     const { t } = useTranslation();
@@ -10,38 +10,38 @@ const About: React.FC = () => {
         {
             icon: <Target className="h-8 w-8 text-primary-500" />,
             title: t('about.mission'),
-            content: "To provide robust tools, algorithms, and platforms that enable researchers to analyze complex spatiotemporal data with unprecedented precision and efficiency."
+            content: "To cultivate application-oriented talents with a solid mathematical foundation, strong research capabilities, and excellent professional ethics, ready to solve practical problems in education, data analysis, and technology."
         },
         {
             icon: <Lightbulb className="h-8 w-8 text-yellow-500" />,
             title: t('about.vision'),
-            content: "We envision a future where ecological decision-making is driven by data-driven insights, powered by a digital base that integrates multi-source data across space and time."
+            content: "To become a leading department in the region, known for excellence in teaching, innovation in research, and significant contributions to local economic and social development."
         },
         {
             icon: <Users className="h-8 w-8 text-blue-500" />,
             title: "Who We Are",
-            content: "A multidisciplinary team of ecologists, mathematicians, and computer scientists dedicated to advancing the field of computational ecology."
+            content: "A dynamic department at Hetao College offering undergraduate programs in Mathematics & Applied Mathematics, Information & Computing Science, and Computer Application Technology."
         }
     ];
 
     const team = [
         {
-            name: "Dr. Sarah Chen",
-            role: "Lead Scientist",
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
-            bio: "Expert in spatial statistics and ecological modeling with 15+ years of experience."
+            name: "Prof. Wang",
+            role: "Professor of Mathematics",
+            image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop",
+            bio: "National Excellent Teacher, specializing in mathematical analysis and education."
         },
         {
-            name: "Prof. James Wilson",
-            role: "Technical Director",
-            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
-            bio: "Specializes in high-performance computing and big data analytics for environmental sciences."
+            name: "Assoc. Prof. Li",
+            role: "Head of Computer Science",
+            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop",
+            bio: "Expert in IoT and Big Data, leading school-enterprise cooperation projects."
         },
         {
-            name: "Dr. Emily Zhang",
-            role: "Data Architect",
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
-            bio: "Focuses on spatiotemporal database design and data visualization techniques."
+            name: "Dr. Zhang",
+            role: "Lecturer",
+            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
+            bio: "Focuses on mathematical modeling and guiding students in national competitions."
         }
     ];
 
@@ -64,7 +64,7 @@ const About: React.FC = () => {
                         {t('nav.about')}
                     </h1>
                     <p className="text-xl text-secondary-600 leading-relaxed">
-                        Welcome to the Spatiotemporal Digital Base. We are dedicated to advancing ecological research through the power of mathematics and computer science.
+                        The Department of Mathematics and Computer Science at Hetao College is dedicated to academic excellence and student success.
                     </p>
                 </motion.div>
 
@@ -120,9 +120,9 @@ const About: React.FC = () => {
                                     <p className="text-primary-600 font-medium mb-4">{member.role}</p>
                                     <p className="text-secondary-600 mb-6 text-sm">{member.bio}</p>
                                     <div className="flex justify-center gap-4">
-                                        <a href="#" className="text-secondary-400 hover:text-secondary-900 transition-colors"><Github className="h-5 w-5" /></a>
-                                        <a href="#" className="text-secondary-400 hover:text-blue-400 transition-colors"><Twitter className="h-5 w-5" /></a>
-                                        <a href="#" className="text-secondary-400 hover:text-blue-700 transition-colors"><Linkedin className="h-5 w-5" /></a>
+                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><Award className="h-4 w-4" /></span>
+                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><BookOpen className="h-4 w-4" /></span>
+                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><GraduationCap className="h-4 w-4" /></span>
                                     </div>
                                 </div>
                             </motion.div>
