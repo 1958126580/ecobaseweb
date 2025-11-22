@@ -1,34 +1,56 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Giscus from '@giscus/react';
+import { motion } from 'framer-motion';
+import { MessageSquare } from 'lucide-react';
 
 const Discussion: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="max-w-4xl mx-auto">
-                <h1 className="text-3xl font-bold text-secondary-900 mb-8">{t('nav.discussion')}</h1>
-                <div className="bg-white rounded-xl border border-secondary-200 shadow-sm p-8">
-                    <Giscus
-                        id="comments"
-                        repo="MeiBujun/spatiotemporal-base" // Placeholder - user needs to configure this
-                        repoId="R_kgDOL..." // Placeholder
-                        category="General"
-                        categoryId="DIC_kwDOL..." // Placeholder
-                        mapping="pathname"
-                        term="Welcome to @giscus/react component!"
-                        reactionsEnabled="1"
-                        emitMetadata="0"
-                        inputPosition="top"
-                        theme="light"
-                        lang="en"
-                        loading="lazy"
-                    />
-                    <div className="mt-4 text-sm text-secondary-500 text-center">
-                        <p>Note: Discussion feature requires GitHub repository configuration.</p>
+        <div className="min-h-screen pt-20 pb-16 relative">
+            <div className="absolute inset-0 bg-secondary-50 -z-10">
+                <div className="absolute top-0 right-0 w-full h-96 bg-gradient-to-b from-primary-50/50 to-transparent"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
+                    className="max-w-4xl mx-auto"
+                >
+                    <div className="text-center mb-12">
+                        <div className="inline-flex items-center justify-center p-3 bg-primary-100 rounded-full mb-4">
+                            <MessageSquare className="h-8 w-8 text-primary-600" />
+                        </div>
+                        <h1 className="text-4xl font-bold text-secondary-900 mb-4">{t('nav.discussion')}</h1>
+                        <p className="text-xl text-secondary-600">
+                            Join the conversation, ask questions, and share your insights with the community.
+                        </p>
                     </div>
-                </div>
+
+                    <div className="glass rounded-2xl shadow-xl p-8 md:p-12">
+                        <Giscus
+                            id="comments"
+                            repo="1958126580/ecobaseweb"
+                            repoId="R_kgDONU-zNA" // This needs to be updated with actual repo ID if available, otherwise it might error or show nothing.
+                            category="General"
+                            categoryId="DIC_kwDONU-zNM4Ckm-l" // Placeholder
+                            mapping="pathname"
+                            term="Welcome to the discussion!"
+                            reactionsEnabled="1"
+                            emitMetadata="0"
+                            inputPosition="top"
+                            theme="light"
+                            lang="en"
+                            loading="lazy"
+                        />
+                        <div className="mt-8 pt-6 border-t border-secondary-200 text-sm text-secondary-500 text-center">
+                            <p>Powered by GitHub Discussions. Sign in with GitHub to participate.</p>
+                        </div>
+                    </div>
+                </motion.div>
             </div>
         </div>
     );
