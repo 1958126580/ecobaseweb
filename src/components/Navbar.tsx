@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { Menu, X, Globe, Leaf } from 'lucide-react';
@@ -7,7 +7,14 @@ import { clsx } from 'clsx';
 const Navbar: React.FC = () => {
     const { t, i18n } = useTranslation();
     const [isOpen, setIsOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const toggleLanguage = () => {
         const newLang = i18n.language === 'en' ? 'zh' : 'en';
@@ -24,13 +31,21 @@ const Navbar: React.FC = () => {
     ];
 
     return (
-        <nav className="bg-white shadow-sm sticky top-0 z-50">
+        <nav className={clsx(
+            "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+            scrolled ? "glass py-2" : "bg-transparent py-4"
+        )}>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-                            <Leaf className="h-8 w-8 text-primary-600" />
-                            <span className="font-bold text-xl text-secondary-900 hidden sm:block">
+                            <div className="p-2 bg-primary-500 rounded-xl text-white shadow-lg shadow-primary-500/30">
+                                <Leaf className="h-6 w-6" />
+                            </div>
+                            <span className={clsx(
+                                "font-bold text-xl hidden sm:block transition-colors",
+                                scrolled ? "text-secondary-900" : "text-secondary-900"
+                            )}>
                                 {t('hero.title')}
                             </span>
                         </Link>
@@ -43,10 +58,10 @@ const Navbar: React.FC = () => {
                                 key={link.path}
                                 to={link.path}
                                 className={clsx(
-                                    "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-colors duration-200",
+                                    "inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium transition-all duration-200",
                                     isActive(link.path)
-                                        ? "border-primary-500 text-secondary-900"
-                                        : "border-transparent text-secondary-500 hover:text-secondary-700 hover:border-secondary-300"
+                                        ? "border-primary-500 text-primary-600"
+                                        : "border-transparent text-secondary-600 hover:text-primary-500 hover:border-primary-200"
                                 )}
                             >
                                 {link.label}
@@ -71,7 +86,7 @@ const Navbar: React.FC = () => {
                         </button>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-secondary-400 hover:text-secondary-500 hover:bg-secondary-100 focus:outline-none"
                         >
                             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
@@ -81,18 +96,18 @@ const Navbar: React.FC = () => {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-white border-t border-secondary-200">
-                    <div className="pt-2 pb-3 space-y-1">
+                <div className="md:hidden glass border-t border-white/20 animate-in slide-in-from-top-5 duration-200">
+                    <div className="pt-2 pb-3 space-y-1 px-4">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.path}
                                 to={link.path}
                                 onClick={() => setIsOpen(false)}
                                 className={clsx(
-                                    "block pl-3 pr-4 py-2 border-l-4 text-base font-medium",
+                                    "block px-3 py-2 rounded-lg text-base font-medium transition-colors",
                                     isActive(link.path)
-                                        ? "bg-primary-50 border-primary-500 text-primary-700"
-                                        : "border-transparent text-secondary-500 hover:bg-secondary-50 hover:border-secondary-300 hover:text-secondary-700"
+                                        ? "bg-primary-50 text-primary-700"
+                                        : "text-secondary-600 hover:bg-secondary-50 hover:text-secondary-900"
                                 )}
                             >
                                 {link.label}
