@@ -1,15 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Download, Github, Code2, Database, Box } from 'lucide-react';
+import { Download, Github, Code2, Database, Box, Layers, Map, BarChart } from 'lucide-react';
 
 const Resources: React.FC = () => {
     const { t } = useTranslation();
 
     const resources = [
         {
-            title: "EcoSpatial Analysis Tool v1.0",
-            description: "A comprehensive tool for spatial pattern analysis in ecological datasets. Features include point pattern analysis, spatial autocorrelation, and more.",
+            title: "EcoBase Data Loader",
+            description: "High-performance Python library for efficiently loading and preprocessing massive spatiotemporal ecological datasets. Supports GeoTIFF, NetCDF, and HDF5 formats.",
             type: "Software",
             icon: <Box className="h-6 w-6 text-blue-600" />,
             color: "bg-blue-100 text-blue-700",
@@ -17,8 +17,35 @@ const Resources: React.FC = () => {
             github: "#"
         },
         {
-            title: "Temporal Dynamics Model",
-            description: "Python library for modeling temporal dynamics in population ecology. Includes modules for time series analysis and forecasting.",
+            title: "SpatialStats Py",
+            description: "A comprehensive toolkit for spatial statistics, including point pattern analysis, spatial autocorrelation (Moran's I, Geary's C), and kriging interpolation.",
+            type: "Code",
+            icon: <BarChart className="h-6 w-6 text-green-600" />,
+            color: "bg-green-100 text-green-700",
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "Global Canopy Height 2024",
+            description: "30m resolution global forest canopy height map derived from GEDI lidar data and Sentinel-2 imagery. Optimized for carbon stock estimation.",
+            type: "Data",
+            icon: <Map className="h-6 w-6 text-purple-600" />,
+            color: "bg-purple-100 text-purple-700",
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "Species Distribution Modeler",
+            description: "An R package implementing advanced machine learning algorithms (MaxEnt, Random Forest, BRT) for predicting species distributions under climate change scenarios.",
+            type: "Software",
+            icon: <Layers className="h-6 w-6 text-blue-600" />,
+            color: "bg-blue-100 text-blue-700",
+            link: "#",
+            github: "#"
+        },
+        {
+            title: "Temporal Dynamics Simulator",
+            description: "Agent-based modeling framework for simulating population dynamics and species interactions over time. Built with C++ for maximum speed.",
             type: "Code",
             icon: <Code2 className="h-6 w-6 text-green-600" />,
             color: "bg-green-100 text-green-700",
@@ -26,8 +53,8 @@ const Resources: React.FC = () => {
             github: "#"
         },
         {
-            title: "Global Vegetation Dataset 2024",
-            description: "High-resolution vegetation cover data processed from satellite imagery. Available in GeoTIFF format with global coverage.",
+            title: "Climate Projections Dataset",
+            description: "Downscaled CMIP6 climate projections (temperature, precipitation, bioclimatic variables) for 2021-2100 under SSP scenarios.",
             type: "Data",
             icon: <Database className="h-6 w-6 text-purple-600" />,
             color: "bg-purple-100 text-purple-700",

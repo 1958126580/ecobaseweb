@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Users, Target, Lightbulb } from 'lucide-react';
+import { Users, Target, Lightbulb, Github, Twitter, Linkedin } from 'lucide-react';
 
 const About: React.FC = () => {
     const { t } = useTranslation();
@@ -9,18 +9,39 @@ const About: React.FC = () => {
     const cards = [
         {
             icon: <Target className="h-8 w-8 text-primary-500" />,
-            title: "Our Mission",
+            title: t('about.mission'),
             content: "To provide robust tools, algorithms, and platforms that enable researchers to analyze complex spatiotemporal data with unprecedented precision and efficiency."
         },
         {
             icon: <Lightbulb className="h-8 w-8 text-yellow-500" />,
-            title: "Our Vision",
+            title: t('about.vision'),
             content: "We envision a future where ecological decision-making is driven by data-driven insights, powered by a digital base that integrates multi-source data across space and time."
         },
         {
             icon: <Users className="h-8 w-8 text-blue-500" />,
             title: "Who We Are",
             content: "A multidisciplinary team of ecologists, mathematicians, and computer scientists dedicated to advancing the field of computational ecology."
+        }
+    ];
+
+    const team = [
+        {
+            name: "Dr. Sarah Chen",
+            role: "Lead Scientist",
+            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop",
+            bio: "Expert in spatial statistics and ecological modeling with 15+ years of experience."
+        },
+        {
+            name: "Prof. James Wilson",
+            role: "Technical Director",
+            image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop",
+            bio: "Specializes in high-performance computing and big data analytics for environmental sciences."
+        },
+        {
+            name: "Dr. Emily Zhang",
+            role: "Data Architect",
+            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop",
+            bio: "Focuses on spatiotemporal database design and data visualization techniques."
         }
     ];
 
@@ -47,7 +68,7 @@ const About: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
                     {cards.map((card, index) => (
                         <motion.div
                             key={index}
@@ -67,6 +88,47 @@ const About: React.FC = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Team Section */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                    className="mb-16"
+                >
+                    <h2 className="text-3xl font-bold text-secondary-900 text-center mb-12">{t('about.team')}</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {team.map((member, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.2, duration: 0.5 }}
+                                className="glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
+                            >
+                                <div className="h-64 overflow-hidden">
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                </div>
+                                <div className="p-6 text-center">
+                                    <h3 className="text-xl font-bold text-secondary-900 mb-1">{member.name}</h3>
+                                    <p className="text-primary-600 font-medium mb-4">{member.role}</p>
+                                    <p className="text-secondary-600 mb-6 text-sm">{member.bio}</p>
+                                    <div className="flex justify-center gap-4">
+                                        <a href="#" className="text-secondary-400 hover:text-secondary-900 transition-colors"><Github className="h-5 w-5" /></a>
+                                        <a href="#" className="text-secondary-400 hover:text-blue-400 transition-colors"><Twitter className="h-5 w-5" /></a>
+                                        <a href="#" className="text-secondary-400 hover:text-blue-700 transition-colors"><Linkedin className="h-5 w-5" /></a>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </motion.div>
             </div>
         </div>
     );

@@ -5,6 +5,8 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Resources from './pages/Resources';
 import Discussion from './pages/Discussion';
+import News from './pages/News';
+import Contact from './pages/Contact';
 
 const App: React.FC = () => {
   return (
@@ -14,7 +16,9 @@ const App: React.FC = () => {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="resources" element={<Resources />} />
+          <Route path="news" element={<News />} />
           <Route path="discussion" element={<Discussion />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
