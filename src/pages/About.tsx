@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Users, Target, Lightbulb, BookOpen, Award, GraduationCap } from 'lucide-react';
+import { Users, Target, Lightbulb, Code, Database, Brain } from 'lucide-react';
 
 const About: React.FC = () => {
     const { t } = useTranslation();
@@ -10,39 +10,26 @@ const About: React.FC = () => {
         {
             icon: <Target className="h-8 w-8 text-primary-500" />,
             title: t('about.mission'),
-            content: "To cultivate application-oriented talents with a solid mathematical foundation, strong research capabilities, and excellent professional ethics, ready to solve practical problems in education, data analysis, and technology."
+            content: "To develop advanced computational tools and mathematical models that address critical ecological challenges, bridging the gap between theoretical ecology and data science."
         },
         {
             icon: <Lightbulb className="h-8 w-8 text-yellow-500" />,
             title: t('about.vision'),
-            content: "To become a leading department in the region, known for excellence in teaching, innovation in research, and significant contributions to local economic and social development."
+            content: "To build a world-class 'Spatiotemporal Digital Base' that empowers researchers globally with open-source software, high-quality datasets, and innovative analysis methods."
         },
         {
-            icon: <Users className="h-8 w-8 text-blue-500" />,
-            title: "Who We Are",
-            content: "A dynamic department at Hetao College offering undergraduate programs in Mathematics & Applied Mathematics, Information & Computing Science, and Computer Application Technology."
+            icon: <Brain className="h-8 w-8 text-blue-500" />,
+            title: "Research Focus",
+            content: "Our interdisciplinary team focuses on ecological modeling, biodiversity analysis, remote sensing data processing, and the development of specialized software for environmental monitoring."
         }
     ];
 
-    const team = [
-        {
-            name: "Prof. Wang",
-            role: "Professor of Mathematics",
-            image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop",
-            bio: "National Excellent Teacher, specializing in mathematical analysis and education."
-        },
-        {
-            name: "Assoc. Prof. Li",
-            role: "Head of Computer Science",
-            image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888&auto=format&fit=crop",
-            bio: "Expert in IoT and Big Data, leading school-enterprise cooperation projects."
-        },
-        {
-            name: "Dr. Zhang",
-            role: "Lecturer",
-            image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop",
-            bio: "Focuses on mathematical modeling and guiding students in national competitions."
-        }
+    // Team members list provided by user
+    const teamMembers = [
+        "Mei Bujun", "Wang Huihui", "Jin Linghua", "Cao Yuanqing",
+        "Yang Yonglin", "Feng Jianmin", "Li Yinfei", "Song Huanlin",
+        "Zhang Pengfei", "Ma Zehua", "Zhang Caizhen", "Liu Di",
+        "Li Caixia", "Zhang Haixia", "Zhang Jing", "Zhang Li", "Zhang Yihan"
     ];
 
     return (
@@ -64,7 +51,7 @@ const About: React.FC = () => {
                         {t('nav.about')}
                     </h1>
                     <p className="text-xl text-secondary-600 leading-relaxed">
-                        The Department of Mathematics and Computer Science at Hetao College is dedicated to academic excellence and student success.
+                        Managed by the Department of Mathematics and Computer Science at Hetao College, we are dedicated to applying mathematical rigor and computing power to ecological research.
                     </p>
                 </motion.div>
 
@@ -98,35 +85,25 @@ const About: React.FC = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl font-bold text-secondary-900 text-center mb-12">{t('about.team')}</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {team.map((member, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2, duration: 0.5 }}
-                                className="glass rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 group"
-                            >
-                                <div className="h-64 overflow-hidden">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                    />
-                                </div>
-                                <div className="p-6 text-center">
-                                    <h3 className="text-xl font-bold text-secondary-900 mb-1">{member.name}</h3>
-                                    <p className="text-primary-600 font-medium mb-4">{member.role}</p>
-                                    <p className="text-secondary-600 mb-6 text-sm">{member.bio}</p>
-                                    <div className="flex justify-center gap-4">
-                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><Award className="h-4 w-4" /></span>
-                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><BookOpen className="h-4 w-4" /></span>
-                                        <span className="p-2 bg-secondary-100 rounded-full text-secondary-500"><GraduationCap className="h-4 w-4" /></span>
+
+                    <div className="glass p-8 rounded-3xl">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                            {teamMembers.map((name, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.05, duration: 0.3 }}
+                                    className="flex items-center gap-3 p-4 bg-white/50 rounded-xl hover:bg-white hover:shadow-md transition-all"
+                                >
+                                    <div className="h-10 w-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-600 font-bold">
+                                        {name.charAt(0)}
                                     </div>
-                                </div>
-                            </motion.div>
-                        ))}
+                                    <span className="font-medium text-secondary-800">{name}</span>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>

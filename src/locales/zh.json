@@ -1,36 +1,39 @@
 {
     "nav": {
         "home": "首页",
-        "about": "关于我们",
-        "resources": "教学资源",
-        "discussion": "讨论区",
-        "news": "新闻动态",
-        "contact": "联系我们"
-    },
-    "hero": {
-        "title": "数学与计算机系",
-        "subtitle": "河套学院 | 以数学与科技赋能未来",
-        "cta": "探索专业"
-    },
-    "about": {
-        "team": "师资队伍",
-        "mission": "办学使命",
-        "vision": "发展愿景"
-    },
-    "contact": {
-        "title": "联系我们",
-        "subtitle": "与河套学院数学与计算机系取得联系。",
-        "name": "姓名",
-        "email": "电子邮箱",
-        "subject": "主题",
-        "message": "留言内容",
-        "send": "发送留言"
-    },
-    "news": {
-        "title": "系部新闻",
-        "subtitle": "了解最新的教学科研动态与学生活动。"
-    },
-    "footer": {
-        "copyright": "© 2025 河套学院数学与计算机系. 版权所有."
-    }
-}
+        {
+            "nav": {
+                "home": "首页",
+                "about": "关于我们",
+                "resources": "教学资源",
+                "discussion": "讨论区",
+                "news": "新闻动态",
+                "contact": "联系我们"
+            },
+            "hero": {
+                "title": "生态计算与数字底座",
+                "subtitle": "用数学与计算机技术解决生态学问题 | 河套学院数学与计算机系管理",
+                "cta": "探索软件资源"
+            },
+            "about": {
+                "team": "科研团队",
+                "mission": "团队使命",
+                "vision": "建设愿景"
+            },
+            "contact": {
+                "title": "联系我们",
+                "subtitle": "与生态计算研究团队取得联系。",
+                "name": "姓名",
+                "email": "电子邮箱",
+                "subject": "主题",
+                "message": "留言内容",
+                "send": "发送留言"
+            },
+            "news": {
+                "title": "研究动态",
+                "subtitle": "最新软件发布、数据共享与团队学术活动。"
+            },
+            "footer": {
+                "copyright": "© 2025 河套学院数学与计算机系生态计算团队. 版权所有."
+            }
+        }
