@@ -1,10 +1,11 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import Giscus from '@giscus/react';
 import { motion } from 'framer-motion';
-import { MessageSquare, AlertCircle, ExternalLink } from 'lucide-react';
+import { MessageSquare } from 'lucide-react';
 
 const Discussion: React.FC = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     return (
         <div className="min-h-screen pt-20 pb-16 relative">
@@ -29,65 +30,26 @@ const Discussion: React.FC = () => {
                         </p>
                     </div>
 
-                    {/* Setup Instructions */}
-                    <div className="glass rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-                        <div className="flex items-start gap-4 mb-6">
-                            <AlertCircle className="h-6 w-6 text-yellow-600 flex-shrink-0 mt-1" />
-                            <div>
-                                <h3 className="text-xl font-bold text-secondary-900 mb-2">Giscus Setup Required</h3>
-                                <p className="text-secondary-600 mb-4">
-                                    To enable discussions on this website, you need to configure Giscus with your GitHub repository. Follow these steps:
-                                </p>
-                                <ol className="list-decimal list-inside space-y-2 text-secondary-700 mb-6">
-                                    <li>Visit <a href="https://giscus.app" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 font-medium">giscus.app</a></li>
-                                    <li>Enter your repository: <code className="bg-secondary-100 px-2 py-1 rounded text-sm">1958126580/ecobaseweb</code></li>
-                                    <li>Enable "Discussions" in your GitHub repository settings</li>
-                                    <li>Copy the generated configuration values</li>
-                                    <li>Update the <code className="bg-secondary-100 px-2 py-1 rounded text-sm">src/pages/Discussion.tsx</code> file with:
-                                        <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
-                                            <li><code className="bg-secondary-100 px-1 rounded text-xs">repoId</code></li>
-                                            <li><code className="bg-secondary-100 px-1 rounded text-xs">categoryId</code></li>
-                                        </ul>
-                                    </li>
-                                </ol>
-                                <a
-                                    href="https://github.com/1958126580/ecobaseweb/settings"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                                >
-                                    <ExternalLink className="h-4 w-4" />
-                                    Open Repository Settings
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Placeholder for Giscus */}
                     <div className="glass rounded-2xl shadow-xl p-8 md:p-12">
-                        <div className="text-center py-12">
-                            <MessageSquare className="h-16 w-16 text-secondary-300 mx-auto mb-4" />
-                            <h3 className="text-xl font-bold text-secondary-700 mb-2">Discussion Module</h3>
-                            <p className="text-secondary-500 max-w-md mx-auto">
-                                Once Giscus is configured, discussions will appear here. Users can sign in with GitHub to participate.
-                            </p>
+                        <Giscus
+                            id="comments"
+                            repo="1958126580/ecobaseweb"
+                            repoId="R_kgDOQa2XzQ"
+                            category="General"
+                            categoryId="DIC_kwDOQa2Xzc4CyFLC"
+                            mapping="pathname"
+                            strict="0"
+                            reactionsEnabled="1"
+                            emitMetadata="0"
+                            inputPosition="bottom"
+                            theme="light"
+                            lang={i18n.language === 'zh' ? 'zh-CN' : 'en'}
+                            loading="lazy"
+                        />
+                        <div className="mt-8 pt-6 border-t border-secondary-200 text-sm text-secondary-500 text-center">
+                            <p>Powered by GitHub Discussions. Sign in with GitHub to participate.</p>
                         </div>
                     </div>
-
-                    {/* Alternative Contact */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                        className="mt-8 text-center"
-                    >
-                        <p className="text-secondary-600">
-                            In the meantime, you can reach us at{' '}
-                            <a href="mailto:1958126580@qq.com" className="text-green-600 hover:text-green-700 font-medium">
-                                1958126580@qq.com
-                            </a>
-                        </p>
-                    </motion.div>
                 </motion.div>
             </div>
         </div>
