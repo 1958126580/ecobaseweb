@@ -1,39 +1,37 @@
 {
     "nav": {
         "home": "Home",
-        {
-            "nav": {
-                "home": "Home",
-                "about": "About",
-                "resources": "Resources",
-                "discussion": "Discussion",
-                "news": "News",
-                "contact": "Contact"
-            },
-            "hero": {
-                "title": "Ecological Computing & Digital Base",
-                "subtitle": "Applying Mathematics & Computer Science to Solve Ecological Problems | Managed by Dept. of Math & CS, Hetao College",
-                "cta": "Explore Our Software"
-            },
-            "about": {
-                "team": "Research Team",
-                "mission": "Our Mission",
-                "vision": "Our Vision"
-            },
-            "contact": {
-                "title": "Contact Us",
-                "subtitle": "Connect with the Ecological Computing Research Team.",
-                "name": "Name",
-                "email": "Email",
-                "subject": "Subject",
-                "message": "Message",
-                "send": "Send Message"
-            },
-            "news": {
-                "title": "Research Updates",
-                "subtitle": "Latest software releases, data publications, and team activities."
-            },
-            "footer": {
-                "copyright": "© 2025 Ecological Computing Team, Dept. of Math & CS, Hetao College. All rights reserved."
-            }
-        }
+        "about": "About",
+        "resources": "Resources & Software",
+        "discussion": "Discussion",
+        "news": "News",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Ecological Computing Research",
+        "subtitle": "Applying Mathematics & Computer Science to Ecological Challenges",
+        "cta": "Explore Resources"
+    },
+    "about": {
+        "team": "Research Team",
+        "mission": "Research Mission",
+        "vision": "Our Vision"
+    },
+    "contact": {
+        "title": "Contact Us",
+        "subtitle": "Get in touch with our research team.",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message"
+    },
+    "news": {
+        "title": "Research Updates",
+        "subtitle": "Latest software releases, publications, and team activities."
+    },
+    "footer": {
+        "copyright": "© 2025 Ecological Computing Research Team, Hetao College. All rights reserved.",
+        "affiliation": "Dept. of Mathematics & Computer Science, Hetao College"
+    }
+}
