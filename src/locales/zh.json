@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "home": "首页",
+        "about": "关于我们",
+        "resources": "资源与软件",
+        "discussion": "讨论区",
+        "contact": "联系我们"
+    },
+    "hero": {
+        "title": "时空数字底座",
+        "subtitle": "用数学与计算机技术赋能生态学研究",
+        "cta": "探索资源"
+    },
+    "footer": {
+        "copyright": "© 2024 时空数字底座. 版权所有."
+    }
+}

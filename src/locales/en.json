@@ -1,0 +1,17 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "resources": "Resources & Software",
+        "discussion": "Discussion",
+        "contact": "Contact"
+    },
+    "hero": {
+        "title": "Spatiotemporal Digital Base",
+        "subtitle": "Empowering Ecological Research with Mathematics & Computing",
+        "cta": "Explore Resources"
+    },
+    "footer": {
+        "copyright": "© 2024 Spatiotemporal Digital Base. All rights reserved."
+    }
+}
