@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// 将 base 设置为你的 GitHub Pages 仓库名路径：/ecobaseweb/
 export default defineConfig({
-  plugins: [react()],
   base: '/ecobaseweb/',
+  plugins: [react()],
 })
